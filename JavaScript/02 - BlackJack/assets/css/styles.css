@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'Americana';
+    src: url('../fonts/Americana-Font-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-VariableFont_wght.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,body {
+    margin: 0;
+    padding: 0;
+    background-color: #2F4F30;
+    color: white;
+}
+
+header {
+    width: 101%;
+    font-family: 'Americana', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    font-style: normal;
+    background-color: black;
+    color: white;
+}
+
+.carta {
+    position: relative;
+    width: 14%;
+    left: 10%;
+    margin-left: -6%;
+}
+
+#computadora-cartas, #jugador-cartas {
+    height: 10%;
+}
+
+html,body {
+    margin: 0;
+    padding: 0;
+}

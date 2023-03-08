@@ -51,8 +51,8 @@ const sumar = (a, b) => {
     return a + b;
 
     // ? Como retornar varios valores?
-    // * Estos se deben colocar entre
-    // # return [1,2]
+    // * Estos se deben colocar entre []
+    // * return [1,2]
 
     // ! Si hay codigo despues de un return este no se va ejecutar
 }

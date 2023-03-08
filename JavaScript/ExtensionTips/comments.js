@@ -5,11 +5,12 @@ This is a block comment
 // Better comments extension
 
 /*
-*       Green
+*       Blue
 !       Red
-Todo    orange
-@       Blue
+Todo    Yellow
+@       Green
 ?       Purple
+#       Orange
 
 
 * U can add more colors and tags in settings.json

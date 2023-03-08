@@ -1,5 +1,6 @@
 // # Cuando se quiere retornar algo en un objeto y el nombre de la propiedad es el mismo al
 // # nombre de la variable a la cual se quiere hacer la impresion no es necesario hacerlo asi:
+// ! Las llaves son importantes para crear el objeto literal
 /*
 function crearPersona(nombre, apellido) {
     return {
