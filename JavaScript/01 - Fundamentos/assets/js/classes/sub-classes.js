@@ -16,30 +16,30 @@ class Persona {
     frase = '';
     comida = '';
 
-    constructor( nombre = 'Sin nombre', codigo = 'Sin codigo', frase = 'Sin frase' ){    
+    constructor(nombre = 'Sin nombre', codigo = 'Sin codigo', frase = 'Sin frase') {
 
         this.nombre = nombre;
         this.codigo = codigo;
         this.frase = frase;
 
-        Persona._conteo ++;
+        Persona._conteo++;
     }
 
-    set setComidaFavorita( comida ) {
-        this.comida = comida.toUpperCase(); 
+    set setComidaFavorita(comida) {
+        this.comida = comida.toUpperCase();
     }
-    
+
     get getComidaFavorita() {
         return this.comida;
     }
 
 
     miNombre() {
-        console.log(`Soy ${ this.nombre } y mi identidad es ${ this.codigo }`);
+        console.log(`Soy ${this.nombre} y mi identidad es ${this.codigo}`);
     }
 
     miFrase() {
-        console.log(`Soy ${ this.nombre } y mi frase es ${ this.frase }`);
+        console.log(`Soy ${this.nombre} y mi frase es ${this.frase}`);
     }
 }
 
@@ -48,7 +48,7 @@ class Heroe extends Persona {
 
     clan = 'Sin clan';
 
-    constructor( nombre, codigo, frase ){
+    constructor(nombre, codigo, frase) {
         super(nombre, codigo, frase);
 
         this.clan = 'Los Avengers';

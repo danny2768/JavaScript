@@ -1,4 +1,4 @@
-import javax.swing.JOptionPane;
+package Introduccion;
 
 public class JOptionPane {
     String string;
@@ -43,3 +43,4 @@ public class JOptionPane {
         optionPane.getData();
     }
 }
+
