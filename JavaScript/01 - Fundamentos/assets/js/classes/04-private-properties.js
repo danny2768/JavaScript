@@ -1,4 +1,7 @@
 
+// # Importante revisar el soporte de navegadores:
+// https://caniuse.com/mdn-javascript_classes_private_class_fields
+
 class Rectangulo {
     
     // @ Para crear una propiedad privada podemos usar # antes del nombre de la variable.
