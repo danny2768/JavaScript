@@ -22,7 +22,7 @@ export class ServerApp {
                 fileDestination,
             });
 
-        tableSaved ? console.log("Table saved!") : console.log("Table not saved!");
+        tableSaved ? console.log("Table saved!") : console.error("Table not saved!");
 
         if (showTable) console.log(table);  
     }
