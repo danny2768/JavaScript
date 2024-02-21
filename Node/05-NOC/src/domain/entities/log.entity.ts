@@ -7,14 +7,27 @@ export enum LogSeverityLevel {
 
 export class LogEntity {
 
-    public level: LogSeverityLevel;
+    public severityLevel: LogSeverityLevel;
     public message: string;
-    public timestamp: Date;
+    public createdAt: Date;
     
     constructor( message: string, level: LogSeverityLevel){
         this.message = message;
-        this.level = level;
-        this.timestamp = new Date();
+        this.severityLevel = level;
+        this.createdAt = new Date();
+    }
+
+    static fromJson = ( json: string ): LogEntity => {
+        const { message, severityLevel, createdAt } = JSON.parse(json);
+
+        if ( !message ) throw new Error('Message is required');
+        if ( !severityLevel ) throw new Error('Severity level is required');
+        if ( !createdAt ) throw new Error('Created at is required');
+
+        const log = new LogEntity(message, severityLevel); 
+        log.createdAt = new Date(createdAt);
+
+        return log; 
     }
 
 }
