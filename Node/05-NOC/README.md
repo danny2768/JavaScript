@@ -12,5 +12,7 @@ MAILER_EMAIL=email@email.com
 MAILER_SECRET_KEY=12345
 
 PROD=boolean
-
 ```
+
+3. Ejecutar ```npm i```
+4. Ejecutar ```npm run dev```
