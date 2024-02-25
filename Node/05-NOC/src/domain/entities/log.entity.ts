@@ -1,3 +1,4 @@
+import { SeverityLevel } from "@prisma/client";
 
 export enum LogSeverityLevel {
     low = 'low',
@@ -27,6 +28,7 @@ export class LogEntity {
     }
 
     static fromJson = ( json: string ): LogEntity => {
+        json = ( json === '' ) ? '{}': json;
         const { message, severityLevel, createdAt, origin } = JSON.parse(json);
 
         if ( !message ) throw new Error('Message is required');
@@ -38,5 +40,20 @@ export class LogEntity {
 
         return log; 
     }
+
+    static fromObject = ( object: { [key: string]: any }): LogEntity => {
+        const { message, severityLevel, createdAt, origin } = object;
+
+        if ( !message ) throw new Error('Message is required');
+        if ( !severityLevel ) throw new Error('Severity level is required');
+        if ( !createdAt ) throw new Error('Created at is required');
+        if ( !origin ) throw new Error('Origin is required');
+
+        const log = new LogEntity({message, severityLevel, origin, createdAt})
+        
+        return log;
+    }
+    
+    
 
 }
