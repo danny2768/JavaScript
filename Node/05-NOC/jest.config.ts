@@ -193,11 +193,11 @@ const config: Config = {
 
   // An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
   watchPathIgnorePatterns: [
-    "node_modules",
-    "postgres-test",
-    "postgres",
-    "mongo-test",
-    "mongo",
+    "<rootDir>/node_modules",
+    "<rootDir>/postgres-test",
+    "<rootDir>/mongo-test",
+    "<rootDir>/postgres",
+    "<rootDir>/mongo",
   ],
   
 

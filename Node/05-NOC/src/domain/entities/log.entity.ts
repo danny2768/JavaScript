@@ -24,7 +24,7 @@ export class LogEntity {
         this.message = options.message;
         this.severityLevel = options.severityLevel;
         this.origin = options.origin;
-        this.createdAt = new Date();
+        this.createdAt = ( options.createdAt ) ? options.createdAt : new Date();        
     }
 
     static fromJson = ( json: string ): LogEntity => {
@@ -36,7 +36,13 @@ export class LogEntity {
         if ( !createdAt ) throw new Error('Created at is required');
         if ( !origin ) throw new Error('Origin is required');
 
-        const log = new LogEntity( {message, severityLevel, origin, createdAt} );         
+        const log = new LogEntity({
+            message, 
+            severityLevel, 
+            createdAt: new Date(createdAt),
+            origin, 
+        } );
+        // const log = new LogEntity({message, severityLevel, origin, createdAt} );
 
         return log; 
     }
