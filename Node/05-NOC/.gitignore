@@ -12,3 +12,5 @@ logs/
 
 /mongo-test
 /postgres-test
+
+/coverage
