@@ -10,5 +10,5 @@ logs/
 /mongo
 /postgres
 
-mongo-test/
-postgres-test/
+/mongo-test
+/postgres-test
