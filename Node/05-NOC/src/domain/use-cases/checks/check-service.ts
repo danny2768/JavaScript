@@ -1,8 +1,9 @@
 import { LogEntity, LogSeverityLevel } from '../../entities/log.entity';
 import { LogRepository } from '../../repository/log.repository';
+
+
 interface CheckServiceUsecase {
     execute( url: string ): Promise<boolean>;
-
 }
 
 type SuccessCallback = () => void;
