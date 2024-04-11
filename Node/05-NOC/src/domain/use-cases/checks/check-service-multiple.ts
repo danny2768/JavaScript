@@ -12,7 +12,7 @@ type ErrorCallback = ( error: string ) => void;
 
 export class CheckServiceMultiple implements CheckServiceMultipleUsecase{
 
-    private readonly origin = 'check-service.ts';
+    private readonly origin = 'check-service-multiple.ts';
 
     constructor(
         private readonly logRepository: LogRepository[],
