@@ -22,7 +22,7 @@ describe('log.model.test.ts', () => {
         const logData = {
             origin: 'log.model.test.ts',
             message: 'Should return log',
-            level: 'low'            
+            severityLevel: 'low'            
         }
 
         const log = await LogModel.create(logData);
@@ -49,7 +49,7 @@ describe('log.model.test.ts', () => {
             origin: { 
                 type: expect.any(Function)
             },
-            level: {
+            severityLevel: {
                 type: expect.any(Function),
                 enum: [ 'low', 'medium', 'high' ],
                 default: 'low'

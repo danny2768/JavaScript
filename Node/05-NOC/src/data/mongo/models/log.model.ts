@@ -9,7 +9,7 @@ const logSchema = new mongoose.Schema({
     origin: {
         type: String,        
     },
-    level: {
+    severityLevel: {
         type: String,
         enum: ['low', 'medium', 'high'],
         default: 'low',

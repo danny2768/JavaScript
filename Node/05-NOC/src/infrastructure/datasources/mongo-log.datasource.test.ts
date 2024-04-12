@@ -44,9 +44,7 @@ describe('mongo-log.datasource.test.ts', () => {
 
         await mongoLogDatasource.saveLog( log );
         
-        const logs = await mongoLogDatasource.getLogs( LogSeverityLevel.medium );                
-        
-        console.log(logs);
+        const logs = await mongoLogDatasource.getLogs( LogSeverityLevel.medium );                        
 
         expect( logs.length ).toBe(1);
         expect( logs[0].severityLevel ).toBe( LogSeverityLevel.medium );
