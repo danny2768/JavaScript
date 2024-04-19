@@ -1,36 +1,46 @@
-import express from 'express'
+import express, { Router } from 'express'
 import path from 'path';
 
 interface Options {
-    PORT: number,
-    PUBLIC_PATH?: string,
+    port: number,
+    routes: Router
+    public_path?: string,
 }
 
 
 export class Server {
 
     private app = express();
+
     private readonly port: number;    
+    private readonly routes: Router;
     private readonly publicPath: string;
 
     constructor( options: Options ){
-        const { PORT, PUBLIC_PATH = 'public' } = options;
-        this.port = PORT;
-        this.publicPath = PUBLIC_PATH;
+        const { port, routes, public_path = 'public' } = options;
+        this.port = port;
+        this.publicPath = public_path;
+        this.routes = routes
     }
 
 
     async start() {
 
-        // @ Middlewares
+        //* Middlewares
+        this.app.use( express.json() ); // raw
+        this.app.use( express.urlencoded({ extended: true })); // x-www-form-urlencoded        
 
-        // * Public folder
-        this.app.use(express.static( this.publicPath ));
+        //* Public folder
+        this.app.use( express.static( this.publicPath ));
 
+        //* Routes
+        this.app.use(this.routes);
+
+        //* SPA
         this.app.get('*', (req, res) => {
             const indexPath = path.join( __dirname + `../../../${ this.publicPath }/index.html` );
             res.sendFile(indexPath);
-            return;
+            // return;
         })
 
 
