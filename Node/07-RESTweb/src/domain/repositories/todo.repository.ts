@@ -8,7 +8,7 @@ export abstract class TodoRepository {
     // TODO: paginacion
     abstract getAll(): Promise<TodoEntity[]>
 
-    abstract getById( id: number ): Promise<TodoEntity | undefined >
+    abstract getById( id: number ): Promise<TodoEntity>
 
     abstract create( createTodoDto: CreateTodoDto ): Promise<TodoEntity>
 
