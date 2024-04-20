@@ -8,7 +8,7 @@ export class TodoDatasourceImpl implements TodoDatasource {
          return todos.map( todo => TodoEntity.fromObj(todo) );
     }
 
-    async getById(id: number): Promise<TodoEntity | undefined> {
+    async getById(id: number): Promise<TodoEntity> {
         const todo = await prisma.todo.findUnique({ 
             where: { id } 
         });

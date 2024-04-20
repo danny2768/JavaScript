@@ -12,9 +12,9 @@ export class TodoRoutes {
         const router = Router();
 
         const postgresDatasource = new TodoDatasourceImpl();
-        const repository = new TodoRepositoryImpl( postgresDatasource );
+        const todoRepository = new TodoRepositoryImpl( postgresDatasource );
         
-        const todoController = new TodosController( repository );
+        const todoController = new TodosController( todoRepository );
         
         // Both lines work
         // router.get('/', (req, res) => todoController.getTodos(req, res) );
